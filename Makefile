@@ -1,8 +1,3 @@
-# ---------------------------------------
-# Simple Makefile wrapper around CMake
-# Works on Windows with Visual Studio or Ninja
-# ---------------------------------------
-
 CMAKE ?= cmake
 BUILD_DIR ?= build
 CONFIG ?= Debug
