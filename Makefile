@@ -32,7 +32,7 @@ build: configure
 
 # Run CTest
 test: build
-	$(CTEST) -C $(CONFIG) --test-dir $(BUILD_DIR) --output-on-failure
+	$(CTEST) -C $(CONFIG) --test-dir $(BUILD_DIR) --verbose
 
 # Run the test executable directly
 run: build
@@ -72,4 +72,4 @@ test-target: configure
 
 # Run CTest only (without building)
 test-only:
-	$(CTEST) -C $(CONFIG) --test-dir $(BUILD_DIR) --output-on-failure
+	$(CTEST) -C $(CONFIG) --test-dir $(BUILD_DIR) --verbose
