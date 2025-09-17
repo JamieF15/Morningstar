@@ -69,7 +69,7 @@ TEST(ReturnsAnalyser, TestReturnsOptimal) {
 
 TEST(ReturnsAnalyser, TestReturnsNotOptimal) {
 	auto* helper = new returns_helper();
-	returns_analyser analyser({ 1.0, 2.0, 0. }, helper);
+	returns_analyser analyser({ 1.0, 2.0, 0.1 }, helper);
 
 	EXPECT_EQ(analyser.returns_optimal(), false);
 }
