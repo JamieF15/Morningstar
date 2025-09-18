@@ -1,4 +1,4 @@
-# Technical Write-Up: Refactoring `returns_analyser`
+# Technical Write-Up
 
 ## Problems Discovered in the Original Code
 
@@ -9,7 +9,7 @@
 
 ### 2. Broken `get_returns` Implementation
 - Took a `std::string out` by value and modified it locally without returning anything.  
-- Resulting string was discarded.  
+- The resulting string was discarded.  
 - Produced an unwanted trailing comma.  
 
 ### 3. Unsafe `erase_values`
@@ -17,7 +17,7 @@
 - Could cause skipped values, undefined behaviour, or crashes.  
 
 ### 4. Incorrect Maximum Calculation
-- `get_max` initialized result to `0.0`.  
+- `get_max` initialised result to `0.0`.  
 - For vectors with only negative numbers, returned `0.0` instead of the actual maximum (e.g., `-0.2`).  
 
 ### 5. Divide-by-Zero Risk in `get_mean`
@@ -66,7 +66,7 @@
 - Used std::accumulate for clarity.
 - Early return added for empty vectors (avoids divide-by-zero).
 
-### 6. Optimized Optimality Check
+### 6. Optimised Optimality Check
 
 - Added early exit - returns false immediately when threshold is violated.
 - Marked noexcept for safety.
@@ -80,7 +80,7 @@
 
 - Replaced manual loops with range-based loops & STL algorithms.
 - Added comments to explain design choices.
-- Standardized naming convention (returns_analyser).
+- Standardised naming convention (returns_analyser).
 
 ---
 
@@ -88,7 +88,7 @@
 
 - std::unique_ptr: enforces single ownership; if shared ownership is needed, std::shared_ptr would be required (but adds runtime cost).
 - Returning 0.0 for empty collections: simple but ambiguous (could use std::optional<double> instead).
-- Minimal logging: sufficient for now, but production code would benefit from structured logging with the capacity to contorl verbosity (e.g., spdlog).
+- Minimal logging: sufficient for now, but production code would benefit from structured logging with the capacity to control verbosity (e.g., spdlog).
 
 ---
 
@@ -103,7 +103,7 @@
 ## Build & Test Guide
 
 This project uses CMake as its build system, wrapped with a `Makefile` for convenience.  
-The Makefile ensures that common commands work the same across Windows, Linux, and macOS.  
+The Makefile ensures that common commands function consistently across Windows, Linux, and macOS.  
 
 ### Quick Start
 
