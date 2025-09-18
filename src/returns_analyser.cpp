@@ -45,6 +45,8 @@ double returns_analyser::get_max() const noexcept
     }
 
     auto it = std::max_element(m_returns.cbegin(), m_returns.cend());
+    
+    // If 'it' points to a valid element in m_returns, return that element, otherwise, return 0.0.
     return (it != m_returns.cend()) ? *it : 0.0;
 }
 
