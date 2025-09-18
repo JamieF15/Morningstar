@@ -86,7 +86,7 @@
 
 ### Trade-Offs
 
-- std::unique_ptr: enforces single ownership; if shared ownership is needed, std::shared_ptr would be required (but adds runtime cost).
+- std::unique_ptr: enforces single ownership. If shared ownership is needed, std::shared_ptr would be required (but adds runtime cost).
 - Returning 0.0 for empty collections: simple but ambiguous (could use std::optional<double> instead).
 - Minimal logging: sufficient for now, but production code would benefit from structured logging with the capacity to control verbosity (e.g., spdlog).
 
